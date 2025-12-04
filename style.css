@@ -125,4 +125,41 @@ nav ul li a:hover {
     transform: translateY(-5px);
 }
 
-.card-bt
+.card-btn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0099ff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: #006bb3;
+}
+
+/* CONTACT */
+.contact {
+    padding: 80px 40px;
+    background: #f0f9ff;
+    text-align: center;
+}
+
+.contact-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: white;
+    margin-top: 50px;
+}
