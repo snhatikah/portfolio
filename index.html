@@ -1,100 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Siti Nurul Hatikah – Portfolio</title>
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatikah Portfolio</title>
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <nav>
+      <div class="logo">Hatikah</div>
+      <button class="dark-mode-toggle">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav>
-            <div class="logo">SNH.</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <section id="about" data-aos="fade-up">
+    <h1>Hello, I'm Hatikah</h1>
+    <p>Front-end Developer | Portfolio Showcase</p>
+  </section>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-text" data-aos="fade-up">
-            <h1>Hello, I'm <span>Siti Nurul Hatikah</span></h1>
-            <p>A creative and passionate developer who builds modern, clean and user-friendly websites.</p>
+  <section id="work" data-aos="fade-up">
+    <h2>My Work</h2>
+    <div class="projects">
+      <div class="project-card" data-aos="zoom-in">Project 1</div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">Project 2</div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">Project 3</div>
+    </div>
+  </section>
 
-            <button class="btn" onclick="scrollToSection('projects')">
-                View My Work ↓
-            </button>
-        </div>
-    </section>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-right">
-            <h2>About Me</h2>
-            <p>
-                I am dedicated to crafting professional and visually appealing web designs,
-                focusing on user experience and aesthetic layouts. I enjoy building modern UI,
-                editing videos, and working on exciting development projects.
-            </p>
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2025 Hatikah</p>
+  </footer>
 
-    <!-- PROJECT SECTION -->
-    <section id="projects" class="projects">
-        <h2 data-aos="fade-up">My Projects</h2>
-
-        <div class="project-grid">
-
-            <div class="project-card" data-aos="zoom-in">
-                <h3>Project 1</h3>
-                <p>Click to view more details about this project.</p>
-                <a href="project1.html" class="card-btn">View Project</a>
-            </div>
-
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="150">
-                <h3>Project 2</h3>
-                <p>Click to view more details about this project.</p>
-                <a href="project2.html" class="card-btn">View Project</a>
-            </div>
-
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-                <h3>Project 3</h3>
-                <p>Click to view more details about this project.</p>
-                <a href="project3.html" class="card-btn">View Project</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <h2 data-aos="fade-up">Contact Me</h2>
-        <p data-aos="fade-up">Feel free to reach out for collaborations or inquiries.</p>
-
-        <div class="contact-box" data-aos="flip-up">
-            <p>Email: <strong>sitinurulhatikah@gmail.com</strong></p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Siti Nurul Hatikah. All Rights Reserved.</p>
-    </footer>
-
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="script.js"></script>
-
-    <script>AOS.init();</script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
