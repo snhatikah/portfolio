@@ -3,96 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Siti Nurul Hatikah — Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Hatikah</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <h2 class="logo">MyPortfolio</h2>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
-            <p>A passionate Web Developer & Designer based in Malaysia</p>
-            <a href="#portfolio" class="btn">View My Work</a>
+        <div class="hero-text">
+            <h1 class="fade-up">Hi, I'm <span>Siti Nurul Hatikah</span></h1>
+            <p class="fade-up delay-1">Junior Developer • UI/UX Enthusiast • Creative Designer</p>
+            <button class="btn fade-up delay-2" onclick="scrollToSection('projects')">View My Work</button>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            I am a developer who loves creating modern, clean, and functional websites.
-            I focus on HTML, CSS, JavaScript, and also backend development when needed.
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">
+            I'm passionate about building clean UI and smooth user experiences. 
+            My focus is on front-end development, mobile design, and creating 
+            beautiful digital layouts. I love turning ideas into interactive products!
         </p>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="skills">
-        <h2>My Skills</h2>
-        <div class="skill-container">
-            <div class="skill-box">HTML</div>
-            <div class="skill-box">CSS</div>
-            <div class="skill-box">JavaScript</div>
-            <div class="skill-box">Java</div>
-            <div class="skill-box">Spring Boot</div>
-            <div class="skill-box">SQL</div>
-        </div>
-    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <h2 class="section-title">My Projects</h2>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="portfolio">
-        <h2>My Work</h2>
+        <div class="project-container">
 
-        <div class="portfolio-container">
-
-            <div class="portfolio-card" onclick="openProject('project1.html')">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+            <div class="project-card" onclick="goTo('project1.html')">
+                <img src="https://via.placeholder.com/400x250" alt="">
                 <h3>Project 1</h3>
-                <p>E-commerce Web System</p>
+                <p>Mobile App page redesign focusing on clean UI and user flow.</p>
             </div>
 
-            <div class="portfolio-card" onclick="openProject('project2.html')">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+            <div class="project-card" onclick="goTo('project2.html')">
+                <img src="https://via.placeholder.com/400x250" alt="">
                 <h3>Project 2</h3>
-                <p>Mobile App Interface</p>
+                <p>Website dashboard layout with smooth interactions.</p>
             </div>
 
-            <div class="portfolio-card" onclick="openProject('project3.html')">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+            <div class="project-card" onclick="goTo('project3.html')">
+                <img src="https://via.placeholder.com/400x250" alt="">
                 <h3>Project 3</h3>
-                <p>Company Management System</p>
+                <p>Personal app concept featuring minimalistic UI style.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Contact Me</h2>
 
-        <div class="contact-info">
-            <p>Email: yourname@gmail.com</p>
-            <p>Phone: +60 123-456789</p>
-            <p>Location: Malaysia</p>
+        <div class="contact-box">
+            <p>Email: <strong>snhatikah@example.com</strong></p>
+            <p>Phone: <strong>012-3456789</strong></p>
+            <p>Location: <strong>Malaysia</strong></p>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Your Name | All Rights Reserved</p>
+        <p>© 2025 Siti Nurul Hatikah — All Rights Reserved</p>
     </footer>
 
     <script src="script.js"></script>
