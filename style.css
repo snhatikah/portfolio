@@ -1,7 +1,9 @@
 :root {
-    --primary: #8a2be2;
+    --primary: #6a0dad;
     --glass: rgba(255, 255, 255, 0.15);
     --text-dark: #222;
+    --navbar-bg: #d1c4e9;
+    --navbar-text: #222;
     --bg: #fafafa;
     --shadow: 0 5px 25px rgba(0,0,0,0.08);
     --radius: 20px;
@@ -13,17 +15,24 @@
 body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; }
 
 /* Navbar */
+
 .navbar {
     width: 100%;
-    padding: 18px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: var(--navbar-bg);
     position: fixed;
     top: 0;
     z-index: 999;
     box-shadow: var(--shadow);
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: var(--navbar-bg);
+    padding: 10px 40px;
 }
 
 .logo {
@@ -40,25 +49,49 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--navbar-text);
     font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--primary);
 }
 
 /* Mobile Menu */
-.hamburger { display: none; font-size: 26px; cursor: pointer; }
+.hamburger { display: none; font-size: 26px; cursor: pointer; color: var(--navbar-text); }
 
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
         top: 70px;
         right: -100%;
-        background: white;
+        background: var(--navbar-bg);
         width: 200px;
         flex-direction: column;
         padding: 20px;
         border-radius: 12px;
         box-shadow: var(--shadow);
-        transition: 0.3s;
+        transition: right 0.3s ease;
     }
 
     .nav-links.active { right: 20px; }
@@ -66,11 +99,37 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
     .hamburger { display: block; }
 }
 
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Home content stays readable */
+.home-content {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    top: 40%;
+    transform: translateY(-40%);
+    padding: 0 20px;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+    .bg-video {
+        opacity: 0.2;
+    }
+}
+
 /* Hero */
 .hero {
     padding-top: 120px;
     min-height: 100vh;
     text-align: center;
+    background: linear-gradient(135deg, #f7f7f7, #e8ecf5);
 }
 
 .hero-content {
@@ -104,69 +163,85 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
     box-shadow: var(--shadow);
 }
 
-/* Social Icons */
-.social-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-.social-icons a {
-    font-size: 22px;
-    color: var(--primary);
-    transition: 0.3s;
-}
-.social-icons a:hover { transform: scale(1.2); }
-
 /* Sections */
 .section { padding: 90px 40px; text-align: center; }
 .section-title { font-size: 32px; font-weight: 600; margin-bottom: 10px; color: var(--primary); }
 .section-desc { max-width: 700px; margin: auto; font-size: 18px; color: #555; }
 
 .about-section {
-    padding: 70px 10%;
-    background: #f9f9f9;
+    padding: 80px 10%;
+    background: #ffffff;
 }
 
+/* Center Title */
+.about-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #6b21a8;
+}
+
+/* Center Description */
+.about-description-text {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* 2 columns (Education & Journey) */
 .about-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 50px;
 }
 
-/* LEFT */
-.about-description {
+/* ===== EDUCATION ===== */
+.education-box {
     flex: 1;
+    padding: 20px;
+    background: #f3e8ff;
+    border-left: 4px solid #a855f7;
+    border-radius: 12px;
 }
 
-.about-description h2 {
+.education-box h3 {
+    color: #7c3aed;
     margin-bottom: 15px;
-    font-size: 28px;
-    color: #333;
 }
 
-.about-description p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #666;
+.edu-item {
+    margin-bottom: 12px;
 }
 
-/* RIGHT */
+.edu-year {
+    font-weight: 600;
+    color: #9333ea;
+    display: block;
+}
+
+.edu-text {
+    margin-top: 3px;
+    color: #444;
+}
+
+/* ===== JOURNEY ===== */
 .about-timeline {
     flex: 1;
 }
 
-.about-timeline h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #333;
+.about-timeline h3 {
+    color: #7c3aed;
+    margin-bottom: 15px;
 }
 
 .timeline-item {
-    border-left: 3px solid #0077ff;
+    border-left: 3px solid #a855f7;
     padding-left: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -174,7 +249,7 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
     content: "";
     width: 12px;
     height: 12px;
-    background: #0077ff;
+    background: #a855f7;
     border-radius: 50%;
     position: absolute;
     left: -7px;
@@ -182,32 +257,29 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
 }
 
 .timeline-date {
-    display: block;
-    font-weight: bold;
-    color: #0077ff;
-    margin-bottom: 5px;
+    font-weight: 600;
+    color: #9333ea;
 }
 
 .timeline-text {
-    font-size: 16px;
-    color: #555;
+    color: #444;
+    margin-top: 3px;
 }
 
-
-/* ========== RESPONSIVE ========== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
     }
-
-    .about-description,
-    .about-timeline {
-        width: 100%;
-    }
 }
 
 
+
+
 /* Projects */
+#projects{
+    background: linear-gradient(135deg, #f7f7f7, #e8ecf5);
+}
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -237,6 +309,7 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
 .project-card h3 { margin: 15px; }
 .project-card p { margin: 0 15px 20px; color: #666; }
 
+
 .see-more{
     display:inline-block;
     margin-top:20px;
@@ -247,7 +320,8 @@ body { background: var(--bg); color: var(--text-dark); scroll-behavior: smooth; 
 
 
 /* Contact */
-.contact-box { margin-top: 15px; font-size: 18px; line-height: 32px; }
+.contact-box { margin-top: 15px; font-size: 18px; line-height: 32px; 
+}
 
 /* Footer */
 footer { background: #eee; padding: 15px; text-align: center; margin-top: 40px; }
